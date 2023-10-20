@@ -1,2 +1,2 @@
 # pipetower-php
-PHP library for the Pipetower API
+The PHP SDK for the Pipetower API
