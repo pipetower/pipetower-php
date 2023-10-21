@@ -9,9 +9,9 @@ class ManagesServers extends ApiAction
     /**
      * Get all servers
      */
-    public function all(): array
+    public function all(array $params = []): array
     {
-        return $this->transformCollection($this->pt->get('servers'), Server::class);
+        return $this->transformCollection($this->pt->get('servers', $params), Server::class);
     }
 
     /**

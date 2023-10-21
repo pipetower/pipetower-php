@@ -17,9 +17,9 @@ trait MakesHttpRequests
     /**
      * Perform a GET request
      */
-    public function get(string $uri): mixed
+    public function get(string $uri, array $params = []): mixed
     {
-        return $this->request('GET', $uri)['data'];
+        return $this->request('GET', $uri, $params)['data'];
     }
 
     /**
@@ -35,7 +35,8 @@ trait MakesHttpRequests
      */
     private function request(string $method, string $uri, array $payload = []): mixed
     {
-        $response = $this->client->request($method, $uri, empty($payload) ? [] : ['form_params' => $payload]);
+        $dataKey = $method == 'GET' ? 'query' : 'form_params';
+        $response = $this->client->request($method, $uri, empty($payload) ? [] : [$dataKey => $payload]);
 
         if (!$this->isSuccessful($response)) {
             $this->handleRequestError($response);
