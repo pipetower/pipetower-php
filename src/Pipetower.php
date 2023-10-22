@@ -5,6 +5,7 @@ namespace Pipetower\PhpSdk;
 use GuzzleHttp\Client;
 use Pipetower\PhpSdk\Actions\ManagesAccounts;
 use Pipetower\PhpSdk\Actions\ManagesActions;
+use Pipetower\PhpSdk\Actions\ManagesPipes;
 use Pipetower\PhpSdk\Actions\ManagesServers;
 use Pipetower\PhpSdk\Actions\ManagesWorkflows;
 
@@ -19,6 +20,7 @@ class Pipetower
     public ManagesServers $servers;
     public ManagesActions $actions;
     public ManagesWorkflows $workflows;
+    public ManagesPipes $pipes;
 
     /**
      * Create a new Pipetower instance as the API client
@@ -49,5 +51,6 @@ class Pipetower
         $this->servers = new ManagesServers($this);
         $this->actions = new ManagesActions($this);
         $this->workflows = new ManagesWorkflows($this);
+        $this->pipes = new ManagesPipes($this);
     }
 }
