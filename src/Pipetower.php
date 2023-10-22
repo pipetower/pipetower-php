@@ -7,6 +7,7 @@ use Pipetower\PhpSdk\Actions\ManagesAccounts;
 use Pipetower\PhpSdk\Actions\ManagesActions;
 use Pipetower\PhpSdk\Actions\ManagesPipes;
 use Pipetower\PhpSdk\Actions\ManagesServers;
+use Pipetower\PhpSdk\Actions\ManagesTemplates;
 use Pipetower\PhpSdk\Actions\ManagesWorkflows;
 
 class Pipetower
@@ -21,6 +22,7 @@ class Pipetower
     public ManagesActions $actions;
     public ManagesWorkflows $workflows;
     public ManagesPipes $pipes;
+    public ManagesTemplates $templates;
 
     /**
      * Create a new Pipetower instance as the API client
@@ -52,5 +54,6 @@ class Pipetower
         $this->actions = new ManagesActions($this);
         $this->workflows = new ManagesWorkflows($this);
         $this->pipes = new ManagesPipes($this);
+        $this->templates = new ManagesTemplates($this);
     }
 }
