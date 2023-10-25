@@ -22,7 +22,7 @@ class ManagesServers extends ApiAction
      */
     public function retrieve(string $serverId): Server
     {
-        return new Server($this->pt->get("servers/$serverId"), $this->pt);
+        return new Server($this->pt->get("servers/$serverId"));
     }
 
     /**

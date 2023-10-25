@@ -6,7 +6,10 @@ use GuzzleHttp\Client;
 use Pipetower\PhpSdk\Actions\ManagesAccounts;
 use Pipetower\PhpSdk\Actions\ManagesActions;
 use Pipetower\PhpSdk\Actions\ManagesPipes;
+use Pipetower\PhpSdk\Actions\ManagesRunExecutions;
+use Pipetower\PhpSdk\Actions\ManagesRuns;
 use Pipetower\PhpSdk\Actions\ManagesServers;
+use Pipetower\PhpSdk\Actions\ManagesTeams;
 use Pipetower\PhpSdk\Actions\ManagesTemplates;
 use Pipetower\PhpSdk\Actions\ManagesWorkflows;
 
@@ -23,6 +26,9 @@ class Pipetower
     public ManagesWorkflows $workflows;
     public ManagesPipes $pipes;
     public ManagesTemplates $templates;
+    public ManagesTeams $teams;
+    public ManagesRuns $runs;
+    public ManagesRunExecutions $runExecutions;
 
     /**
      * Create a new Pipetower instance as the API client
@@ -55,5 +61,8 @@ class Pipetower
         $this->workflows = new ManagesWorkflows($this);
         $this->pipes = new ManagesPipes($this);
         $this->templates = new ManagesTemplates($this);
+        $this->teams = new ManagesTeams($this);
+        $this->runs = new ManagesRuns($this);
+        $this->runExecutions = new ManagesRunExecutions($this);
     }
 }

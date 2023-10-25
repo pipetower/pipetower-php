@@ -20,7 +20,7 @@ class ManagesWorkflows extends ApiAction
      */
     public function retrieve(string $workflowId): Workflow
     {
-        return new Workflow($this->pt->get("workflows/$workflowId"), $this->pt);
+        return new Workflow($this->pt->get("workflows/$workflowId"));
     }
 
     /**

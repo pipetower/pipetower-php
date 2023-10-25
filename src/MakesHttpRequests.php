@@ -8,6 +8,7 @@ use Pipetower\PhpSdk\Exceptions\MethodNotAllowedException;
 use Pipetower\PhpSdk\Exceptions\NotFoundException;
 use Pipetower\PhpSdk\Exceptions\UnauthenticatedException;
 use Pipetower\PhpSdk\Exceptions\UnauthorizedException;
+use Pipetower\PhpSdk\Exceptions\ValidationException;
 use Psr\Http\Message\ResponseInterface;
 
 trait MakesHttpRequests
@@ -65,6 +66,7 @@ trait MakesHttpRequests
             403 => throw new UnauthorizedException((string) $response->getBody()),
             404 => throw new NotFoundException((string) $response->getBody()),
             405 => throw new MethodNotAllowedException((string) $response->getBody()),
+            422 => throw new ValidationException((string) $response->getBody()),
             default => throw new Exception((string) $response->getBody())
         };
     }

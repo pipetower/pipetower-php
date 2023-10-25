@@ -20,7 +20,7 @@ class ManagesActions extends ApiAction
      */
     public function retrieve(string $actionId): Action
     {
-        return new Action($this->pt->get("actions/$actionId"), $this->pt);
+        return new Action($this->pt->get("actions/$actionId"));
     }
 
     /**

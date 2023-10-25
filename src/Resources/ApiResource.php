@@ -2,20 +2,16 @@
 
 namespace Pipetower\PhpSdk\Resources;
 
-use Pipetower\PhpSdk\Pipetower;
-
 abstract class ApiResource
 {
-    private Pipetower $pt;
     public array $attributes;
     public string $id;
 
     /**
      * Create a new instance of the API resource
      */
-    public function __construct(array $attributes, Pipetower $pt)
+    public function __construct(array $attributes)
     {
-        $this->pt = $pt;
         $this->attributes = $attributes;
         $this->fill($attributes);
     }

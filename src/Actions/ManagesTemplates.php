@@ -19,6 +19,6 @@ class ManagesTemplates extends ApiAction
      */
     public function retrieve(string $templateId): Template
     {
-        return new Template($this->pt->get("templates/$templateId"), $this->pt);
+        return new Template($this->pt->get("templates/$templateId"));
     }
 }

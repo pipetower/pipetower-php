@@ -20,7 +20,7 @@ class ManagesPipes extends ApiAction
      */
     public function retrieve(string $pipeId): Pipe
     {
-        return new Pipe($this->pt->get("pipes/$pipeId"), $this->pt);
+        return new Pipe($this->pt->get("pipes/$pipeId"));
     }
 
     /**

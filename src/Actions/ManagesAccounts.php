@@ -11,6 +11,6 @@ class ManagesAccounts extends ApiAction
      */
     public function info(): Account
     {
-        return new Account($this->pt->get('account'), $this->pt);
+        return new Account($this->pt->get('account'));
     }
 }
