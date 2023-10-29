@@ -3,7 +3,10 @@ The PHP SDK for the Pipetower API
 [Pipetower API Docs](https://pipetower.com/docs/api)
 
 # Installation
-wip
+`composer require pipetower/pipetower-php-sdk`
 
 # Usage
-wip
+```
+$pt = new \Pipetower\PhpSdk\Pipetower('api-token');
+$account = $pt->account->info();
+```
