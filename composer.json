@@ -3,6 +3,7 @@
     "description": "The PHP SDK for the Pipetower API",
     "keywords": ["pipetower", "automation", "api", "sdk"],
     "homepage": "https://pipetower.com",
+    "license": "MIT",
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.8"
