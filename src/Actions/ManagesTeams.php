@@ -26,8 +26,8 @@ class ManagesTeams extends ApiAction
     /**
      * Get the team variables of the specified team
      */
-    public function vars(string $teamId): array
+    public function vars(string $teamId, array $params = []): array
     {
-        return $this->transformCollection($this->pt->get("teams/$teamId/vars"), Variable::class);
+        return $this->transformCollection($this->pt->get("teams/$teamId/vars", $params), Variable::class);
     }
 }

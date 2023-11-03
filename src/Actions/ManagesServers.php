@@ -36,16 +36,16 @@ class ManagesServers extends ApiAction
     /**
      * Get the metrics of the specified server
      */
-    public function metrics(string $serverId): array
+    public function metrics(string $serverId, array $params = []): array
     {
-        return $this->transformCollection($this->pt->get("servers/$serverId/metrics"), Metric::class);
+        return $this->transformCollection($this->pt->get("servers/$serverId/metrics", $params), Metric::class);
     }
 
     /**
      * Get the environment variables of the specified server
      */
-    public function vars(string $serverId): array
+    public function vars(string $serverId, array $params = []): array
     {
-        return $this->transformCollection($this->pt->get("servers/$serverId/vars"), Variable::class);
+        return $this->transformCollection($this->pt->get("servers/$serverId/vars", $params), Variable::class);
     }
 }

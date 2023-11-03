@@ -21,8 +21,10 @@ abstract class ApiAction
      */
     protected function transformCollection(array $collection, string $class): array
     {
-        return array_map(function ($attributes) use ($class) {
+        $collection['data'] = array_map(function ($attributes) use ($class) {
             return new $class($attributes, $this->pt);
-        }, $collection);
+        }, $collection['data']);
+
+        return $collection;
     }
 }

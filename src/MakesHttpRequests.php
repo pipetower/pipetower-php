@@ -20,7 +20,7 @@ trait MakesHttpRequests
      */
     public function get(string $uri, array $params = []): mixed
     {
-        return $this->request('GET', $uri, $params)['data'];
+        return $this->request('GET', $uri, $params);
     }
 
     /**
@@ -28,7 +28,7 @@ trait MakesHttpRequests
      */
     public function post(string $uri, array $payload = []): mixed
     {
-        return $this->request('POST', $uri, $payload)['data'];
+        return $this->request('POST', $uri, $payload);
     }
 
     /**
