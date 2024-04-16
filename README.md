@@ -6,7 +6,7 @@ The PHP SDK for the Pipetower API
 `composer require pipetower/pipetower-php-sdk`
 
 # Usage
-```
+```php
 $pt = new \Pipetower\PhpSdk\Pipetower('api-token');
 $account = $pt->account->info();
 ```
